@@ -127,7 +127,6 @@ func authHandler(next http.HandlerFunc) http.HandlerFunc {
 type UserProfile struct {
 	Email string `json:"email"`
 }
-
 func userProfileHandler(writer http.ResponseWriter, request *http.Request) {
 	email := request.Context().Value("email")
 	if email == nil {
