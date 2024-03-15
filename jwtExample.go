@@ -124,9 +124,15 @@ func authHandler(next http.HandlerFunc) http.HandlerFunc {
 	}
 }
 
+
+_
+
 type UserProfile struct {
 	Email string `json:"email"`
 }
+
+
+
 func userProfileHandler(writer http.ResponseWriter, request *http.Request) {
 	email := request.Context().Value("email")
 	if email == nil {
@@ -174,7 +180,6 @@ func main() {
 		}),
 		ReadTimeout:  10 * time.Second, // Set read timeout to 10 seconds
 		WriteTimeout: 10 * time.Second, // Set write timeout to 10 seconds
-		// Add other configurations as needed
 	}
 
 	log.Fatal(server.ListenAndServe())
